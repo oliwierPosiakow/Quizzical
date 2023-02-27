@@ -1,0 +1,20 @@
+*{
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Karla', sans-serif;
+}
+
+html, body{
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../assets/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

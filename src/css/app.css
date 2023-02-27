@@ -1,0 +1,23 @@
+.App {
+  font-family: --karla;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+.App .button {
+  background: #4D5B9E;
+  border: none;
+  color: #F5F7FB;
+  border-radius: 15px;
+  padding: 1em 3em;
+  cursor: pointer;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
+  transition: all 2ms ease-in-out;
+  font-family: "Inter", sans-serif;
+}
+.App .button:active {
+  transform: translateY(0.5px);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
+}/*# sourceMappingURL=app.css.map */
