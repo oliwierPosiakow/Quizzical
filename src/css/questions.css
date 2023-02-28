@@ -1,0 +1,30 @@
+.question {
+  display: flex;
+  flex-direction: column;
+  color: #293264;
+  width: 100%;
+}
+.question h2 {
+  font-family: "Karla", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+.question .answer--wrapper {
+  display: flex;
+  gap: 0.5em;
+  padding: 0.1em 0;
+}
+.question .answer--wrapper .answer {
+  font-size: 0.6rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border: 1px solid #4D5B9E;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+}
+.question hr {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  margin-top: 1em;
+}/*# sourceMappingURL=questions.css.map */

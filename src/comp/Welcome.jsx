@@ -5,7 +5,7 @@ export default function Welcome(props){
         <div className="welcome--banner">
             <h1 className="welcome--h1">Quizzical</h1>
             <p className="welcome--desc">Welcome, to Quizzical! Answer questions and check your trivia skills</p>
-            <button className="welcome--button button" >Start quiz</button>
+            <button className="welcome--button button" onClick={props.handleClick}>Start quiz</button>
         </div>
     )
 } 
