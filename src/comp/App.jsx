@@ -18,15 +18,19 @@ function App() {
     .then(res => res.json())
     .then(data => {
       setTrivia(data.results.map(el => {
+
         const answersArr = el.incorrect_answers
         answersArr.push(el.correct_answer)
         const decodedAnswers = answersArr.map(el => decode(el, {level: 'html5'}))
+
         return {
           question: decode(el.question, {level: 'html5'}),
           answers: decodedAnswers,
           correct: el.correct_answer,
-          id: nanoid()
+          id: nanoid(),
+          isCorrect: false
         }
+
       }))
     })
   },[round])
@@ -39,9 +43,15 @@ function App() {
         title={el.question}
         answers={el.answers}
         correct={el.correct}
+        flag= {false}
+        checkIsCorrect={setFlag}
       />
     )
   })
+
+  function setFlag(id){
+    
+  }
 
   function startGame(){
     setGameStarted(prevGameStarted => !prevGameStarted)
