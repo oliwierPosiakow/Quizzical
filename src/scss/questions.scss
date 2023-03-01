@@ -12,14 +12,16 @@
         display: flex;
         gap: .5em;
         padding: .1em 0;
-        
-        .answer{
+
+        .answer p{
             font-size: .6rem;
             font-family: 'Inter', sans-serif;
             font-weight: 500;
             border: 1px solid #4D5B9E;
-            border-radius: 8px;
             padding: 0.5em 1em;
+            background: rgba($color: #000000, $alpha: .06);
+            cursor: pointer;
+            margin: 0;
         }
     }
     hr{

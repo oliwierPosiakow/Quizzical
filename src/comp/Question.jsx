@@ -1,16 +1,47 @@
 import '../css/questions.css'
+import { decode } from 'he'
+import React from 'react'
+import {nanoid} from 'nanoid'
+import Answer from './Answer'
 
 export default function Question(props){
+    const {title, answers} = props
+    const [answersArr, setAnswersArr] = React.useState(setAnswersObj)
 
-    const {title, correct_answer, incorrect_answers} = props
+    function setAnswersObj(){
+        return answers.map(item => {
+            return {
+                value: item,
+                isChecked: false,
+                key: nanoid(),
+                id: nanoid()
+            }
+        })
+    }
+
+    function selectedAnswer(id){
+        setAnswersArr(oldAnswers => oldAnswers.map(answer => {
+            return answer.id === id ?
+                {...answer, isChecked: !answer.isChecked} :
+                {...answer, isChecked: false}   
+        }))
+    }
+
+    const answersEl = answersArr.map(answer => {
+        return (
+            <Answer
+                key={nanoid()}
+                value={answer.value}
+                isChecked={answer.isChecked}
+                handleClick={()=> selectedAnswer(answer.id)}
+            />
+        )
+    })
     return (
         <div className="question">
             <h2 className="question">{title}</h2>
             <div className="answer--wrapper">
-                <div className="answer">{correct_answer}</div>
-                <div className="answer">{incorrect_answers[0]}</div>
-                <div className="answer">{incorrect_answers[1]}</div>
-                <div className="answer">{incorrect_answers[2]}</div>
+                {answersEl}
             </div>
             <hr />
         </div>
