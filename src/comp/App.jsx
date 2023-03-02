@@ -44,13 +44,27 @@ function App() {
         answers={el.answers}
         correct={el.correct}
         flag= {false}
-        checkIsCorrect={setFlag}
+        setCorrect={setIsCorrect}
       />
     )
   })
 
-  function setFlag(id){
-    
+  function setIsCorrect(id){
+    setTrivia(prevTrivia => {
+      return prevTrivia.map(el => {
+        el.id == id ?
+        {...el, isCorrect: !el.isCorrect}:
+        el
+      })
+    })
+    console.log(trivia)
+  }
+
+  function checkAnswers(){
+    let pts = 0
+    for(let el of trivia){
+      console.log(trivia)
+    }
   }
 
   function startGame(){
@@ -62,7 +76,7 @@ function App() {
       {!gameStarted && <Welcome handleClick={startGame}/>}
       <div className="trivia-questions">
         {questions}
-        <button className="check--answers button">Check Answers</button>
+        <button className="check--answers button" onClick={checkAnswers}>Check Answers</button>
       </div>
     </div>
   )

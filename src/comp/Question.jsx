@@ -22,8 +22,8 @@ export default function Question(props){
     function selectedAnswer(id){
         setAnswersArr(oldAnswers => oldAnswers.map(answer => {
 
-            if(answer.value === props.correct && answer.id === id){
-                props.checkIsCorrect(answer.id)
+            if(answer.value == props.correct && answer.id == id){
+                props.setCorrect(id)
             }
 
             return answer.id === id ?
@@ -39,7 +39,8 @@ export default function Question(props){
                 key={nanoid()}
                 value={answer.value}
                 isChecked={answer.isChecked}
-               handleClick={()=> selectedAnswer(answer.id, answer.value)}
+                parentId={props.id}
+                handleClick={()=> selectedAnswer(answer.id, answer.value)}
             />
         )
     })
